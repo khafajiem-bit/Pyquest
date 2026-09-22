@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyQuest - رحلة تعلم بايثون</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --success: #22c55e;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: var(--accent);
+            text-align: center;
+            margin-top: 0;
+        }
+        .lesson-card {
+            background: #0f172a;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #334155;
+        }
+        pre {
+            background: #020617;
+            padding: 12px;
+            border-radius: 8px;
+            color: #38bdf8;
+            overflow-x: auto;
+            direction: ltr;
+            text-align: left;
+        }
+        button {
+            width: 100%;
+            background: var(--accent);
+            color: #0f172a;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: var(--accent-hover);
+        }
+        .result {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
+        .result.success {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--success);
+            border: 1px solid var(--success);
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐍 PyQuest</h1>
+        <p style="text-align: center; color: var(--text-muted);">مرحباً بك في مغامرة تعلم البايثون!</p>
+        
+        <div class="lesson-card">
+            <h3>الدرس 1: طباعة النصوص (Print)</h3>
+            <p>في بايثون، نستخدم الأمر <code>print()</code> لعرض النصوص على الشاشة.</p>
+            <pre><code>print("Hello, World!")</code></pre>
+        </div>
+
+        <button onclick="runCode()">تشغيل الكود الاختباري 🚀</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function runCode() {
+            const res = document.getElementById('result');
+            res.className = 'result success';
+            res.innerText = '✨ المخرجات: Hello, World!';
+        }
+    </script>
+</body>
+</html>
 
